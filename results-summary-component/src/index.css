@@ -1,27 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
-
-@theme {
---color-light-red: hsl(0, 100%, 67%);
---color-orange-yellow: hsl(39, 100%, 56%);
---color-green-teal: hsl(166, 100%, 37%);
---color-cobalt-blue: hsl(234, 85%, 45%);
-
---color-light-bg-red: hsla(0, 100%, 67%, 0.103);
---color-orange-bg-yellow: hsla(39, 100%, 56%, 0.097);
---color-green-bg-teal: hsla(166, 100%, 37%, 0.103);
---color-cobalt-bg-blue: hsla(234, 85%, 45%, 0.086);
-
---color-light-slate-blue: hsl(252, 100%, 67%);
---color-light-royal-blue: hsl(241, 81%, 54%);
-
---color-violet-blue: hsla(256, 72%, 46%, 1);
---color-persian-blue: hsla(241, 72%, 46%, 0);
-
---color-pale-blue: hsl(221, 100%, 96%);
---color-light-lavender: hsl(241, 100%, 89%);
---color-dark-gray-blue: hsl(224, 30%, 27%);
+:root {
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
+@theme {
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-orange-yellow: hsl(39, 100%, 56%);
+  --color-green-teal: hsl(166, 100%, 37%);
+  --color-cobalt-blue: hsl(234, 85%, 45%);
 
+  --color-light-bg-red: hsla(0, 100%, 67%, 0.103);
+  --color-orange-bg-yellow: hsla(39, 100%, 56%, 0.097);
+  --color-green-bg-teal: hsla(166, 100%, 37%, 0.103);
+  --color-cobalt-bg-blue: hsla(234, 85%, 45%, 0.086);
 
+  --color-light-slate-blue: hsl(252, 100%, 67%);
+  --color-light-royal-blue: hsl(241, 81%, 54%);
+
+  --color-violet-blue: hsla(256, 72%, 46%, 1);
+  --color-persian-blue: hsla(241, 72%, 46%, 0);
+
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+}

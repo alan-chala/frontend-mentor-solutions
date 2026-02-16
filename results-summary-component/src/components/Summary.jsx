@@ -8,6 +8,7 @@ export const Summary = () => {
         {data.map((item) => (
           <div
             className={`flex items-center justify-between p-4 rounded-xl ${item.category === "Reaction" ? "bg-light-bg-red" : item.category === "Memory" ? "bg-orange-bg-yellow" : item.category === "Verbal" ? "bg-green-bg-teal" : "bg-cobalt-bg-blue"}`}
+            key={item.category}
           >
             <div className="flex items-center gap-2">
               <img src={item.icon} alt={item.category} />
@@ -26,7 +27,7 @@ export const Summary = () => {
           </div>
         ))}
       </div>
-      <button className="w-full p-4 rounded-full font-bold text-white bg-dark-gray-blue hover:bg-light-slate-blue cursor-pointer">
+      <button className="w-full p-4 rounded-full font-bold text-white bg-dark-gray-blue hover:bg-light-slate-blue cursor-pointer transition duration-200 ease-in">
         Continue
       </button>
     </div>
