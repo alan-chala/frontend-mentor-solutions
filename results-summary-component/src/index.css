@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
+
 @theme {
 --color-light-red: hsl(0, 100%, 67%);
 --color-orange-yellow: hsl(39, 100%, 56%);
 --color-green-teal: hsl(166, 100%, 37%);
 --color-cobalt-blue: hsl(234, 85%, 45%);
+
+--color-light-bg-red: hsla(0, 100%, 67%, 0.103);
+--color-orange-bg-yellow: hsla(39, 100%, 56%, 0.097);
+--color-green-bg-teal: hsla(166, 100%, 37%, 0.103);
+--color-cobalt-bg-blue: hsla(234, 85%, 45%, 0.086);
+
 --color-light-slate-blue: hsl(252, 100%, 67%);
 --color-light-royal-blue: hsl(241, 81%, 54%);
 
