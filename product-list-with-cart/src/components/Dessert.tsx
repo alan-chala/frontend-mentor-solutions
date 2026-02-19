@@ -2,9 +2,10 @@ import type { Db } from "../types";
 
 type DessertProps = {
   dessert: Db;
+  addToCart: (dessert: Db) => void;
 };
 
-export const Dessert = ({ dessert }: DessertProps) => {
+export const Dessert = ({ dessert, addToCart }: DessertProps) => {
   return (
     <article className="space-y-8">
       <div className="relative">
@@ -17,8 +18,11 @@ export const Dessert = ({ dessert }: DessertProps) => {
             className="rounded-xl object-cover w-full"
           />
         </picture>
-        <button className="flex items-center justify-center gap-2 cursor-pointer font-medium absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-46 py-3 px-6 bg-white text-rose-900 rounded-full border border-solid border-rose-900">
-          <img src="/public/icon-add-to-cart.svg" alt="Cart icon" />
+        <button
+          className="flex items-center justify-center gap-2 cursor-pointer font-medium absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-46 py-3 px-6 bg-white text-rose-900 rounded-full border border-solid border-rose-900"
+          onClick={() => addToCart(dessert)}
+        >
+          <img src="/icon-add-to-cart.svg" alt="Cart icon" />
           Add to Cart
         </button>
       </div>

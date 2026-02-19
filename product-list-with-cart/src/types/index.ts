@@ -9,3 +9,7 @@ export type Db = {
   category: string;
   price: number;
 };
+
+export type Dessert = Db & {
+  quantity: number;
+};
