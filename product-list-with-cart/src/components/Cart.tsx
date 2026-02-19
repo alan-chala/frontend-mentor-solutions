@@ -3,9 +3,10 @@ import type { Dessert } from "../types";
 
 type CartProps = {
   cart: Dessert[];
+  deleteFromCart: (name: string) => void;
 };
 
-export const Cart = ({ cart }: CartProps) => {
+export const Cart = ({ cart, deleteFromCart }: CartProps) => {
   const cartLength = useMemo(
     () => cart.reduce((total, item) => total + item.quantity, 0),
     [cart],
@@ -68,7 +69,10 @@ export const Cart = ({ cart }: CartProps) => {
                   </div>
 
                   <div>
-                    <button className="cursor-pointer border-2 border-solid border-rose-300 hover:border-rose-900 h-5 w-5 flex items-center justify-center rounded-full">
+                    <button
+                      className="cursor-pointer border-2 border-solid border-rose-300 hover:border-rose-900 h-5 w-5 flex items-center justify-center rounded-full"
+                      onClick={() => deleteFromCart(item.name)}
+                    >
                       <img
                         src="/icon-remove-item.svg"
                         alt="Remove icon"

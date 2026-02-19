@@ -24,9 +24,14 @@ export const useCart = () => {
     }
   }
 
+  function deleteFromCart(name: string) {
+    setCart(cart.filter((item) => item.name !== name));
+  }
+
   return {
     db,
     cart,
     addToCart,
+    deleteFromCart,
   };
 };
