@@ -21,8 +21,8 @@ export const Cart = ({ cart, deleteFromCart }: CartProps) => {
   return (
     <>
       {cart.length === 0 ? (
-        <section className="w-full md:cols-1">
-          <div className="bg-white p-10 rounded-xl w-full">
+        <section>
+          <div className="bg-white p-10 rounded-xl">
             <h2 className="text-2xl mb-4 font-bold text-red">
               Your Cart ({cartLength})
             </h2>
@@ -40,7 +40,7 @@ export const Cart = ({ cart, deleteFromCart }: CartProps) => {
           </div>
         </section>
       ) : (
-        <section className="md:cols-1 w-full">
+        <section>
           <div className="bg-white p-6 rounded-xl">
             <div>
               <h2 className="text-2xl mb-4 font-bold text-red">

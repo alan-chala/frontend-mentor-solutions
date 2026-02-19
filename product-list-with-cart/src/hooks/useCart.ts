@@ -28,10 +28,30 @@ export const useCart = () => {
     setCart(cart.filter((item) => item.name !== name));
   }
 
+  function decrementQuantity(name: string) {
+    setCart(
+      cart.map((item) =>
+        item.name === name && item.quantity > 1
+          ? { ...item, quantity: (item.quantity -= 1) }
+          : item,
+      ),
+    );
+  }
+
+  function incrementQuantity(name: string) {
+    setCart(
+      cart.map((item) =>
+        item.name === name ? { ...item, quantity: (item.quantity += 1) } : item,
+      ),
+    );
+  }
+
   return {
     db,
     cart,
     addToCart,
     deleteFromCart,
+    decrementQuantity,
+    incrementQuantity,
   };
 };
