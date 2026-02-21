@@ -2,6 +2,7 @@ import { useCart } from "./hooks/useCart";
 import { Desserts } from "./components/Desserts";
 import { Cart } from "./components/Cart";
 import { ConfirmOrder } from "./components/ConfirmOrder";
+import { Shadow } from "./components/Shadow";
 
 function App() {
   const {
@@ -32,7 +33,12 @@ function App() {
           deleteFromCart={deleteFromCart}
           handleActiveOrder={handleActiveOrder}
         />
-        {activeOrder && <ConfirmOrder cart={cart} />}
+        {activeOrder && (
+          <>
+            <ConfirmOrder cart={cart} />
+            <Shadow />
+          </>
+        )}
       </main>
     </>
   );
