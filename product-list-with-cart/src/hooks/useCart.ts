@@ -5,6 +5,7 @@ import type { Db, Dessert } from "../types";
 export const useCart = () => {
   const [db] = useState<Db[]>(data);
   const [cart, setCart] = useState<Dessert[]>([]);
+  const [activeOrder, setActiveOrder] = useState(false);
 
   function addToCart(dessert: Db) {
     const itemExist = cart.find((item) => item.name === dessert.name);
@@ -46,6 +47,10 @@ export const useCart = () => {
     );
   }
 
+  function handleActiveOrder() {
+    setActiveOrder(true);
+  }
+
   return {
     db,
     cart,
@@ -53,5 +58,7 @@ export const useCart = () => {
     deleteFromCart,
     decrementQuantity,
     incrementQuantity,
+    handleActiveOrder,
+    activeOrder,
   };
 };

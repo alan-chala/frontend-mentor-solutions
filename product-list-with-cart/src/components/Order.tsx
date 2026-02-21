@@ -1,8 +1,9 @@
 type OrderProps = {
   orderTotal: number;
+  handleActiveOrder: () => void;
 };
 
-export const Order = ({ orderTotal }: OrderProps) => {
+export const Order = ({ orderTotal, handleActiveOrder }: OrderProps) => {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between py-6">
@@ -24,6 +25,7 @@ export const Order = ({ orderTotal }: OrderProps) => {
           type="button"
           aria-label="Confirm order button"
           className="bg-red text-white block w-full rounded-full p-4 cursor-pointer hover:opacity-80 font-semibold"
+          onClick={handleActiveOrder}
         >
           Confirm Order
         </button>

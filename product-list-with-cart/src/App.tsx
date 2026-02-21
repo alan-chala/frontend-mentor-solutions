@@ -1,6 +1,7 @@
 import { useCart } from "./hooks/useCart";
 import { Desserts } from "./components/Desserts";
 import { Cart } from "./components/Cart";
+import { ConfirmOrder } from "./components/ConfirmOrder";
 
 function App() {
   const {
@@ -10,11 +11,15 @@ function App() {
     deleteFromCart,
     decrementQuantity,
     incrementQuantity,
+    handleActiveOrder,
+    activeOrder,
   } = useCart();
 
   return (
     <>
-      <main className="max-w-7xl mx-auto py-10 px-6 gap-6 grid place-content-center grid-cols-1 md:grid-cols-3">
+      <main
+        className={`max-w-7xl mx-auto py-10 px-6 gap-6 grid place-content-center grid-cols-1 md:grid-cols-3 ${activeOrder ? "-z-10" : ""}`}
+      >
         <Desserts
           db={db}
           cart={cart}
@@ -22,7 +27,12 @@ function App() {
           decrementQuantity={decrementQuantity}
           incrementQuantity={incrementQuantity}
         />
-        <Cart cart={cart} deleteFromCart={deleteFromCart} />
+        <Cart
+          cart={cart}
+          deleteFromCart={deleteFromCart}
+          handleActiveOrder={handleActiveOrder}
+        />
+        {activeOrder && <ConfirmOrder cart={cart} />}
       </main>
     </>
   );

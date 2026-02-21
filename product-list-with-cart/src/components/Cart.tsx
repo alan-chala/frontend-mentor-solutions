@@ -5,9 +5,14 @@ import type { Dessert } from "../types";
 type CartProps = {
   cart: Dessert[];
   deleteFromCart: (name: string) => void;
+  handleActiveOrder: () => void;
 };
 
-export const Cart = ({ cart, deleteFromCart }: CartProps) => {
+export const Cart = ({
+  cart,
+  deleteFromCart,
+  handleActiveOrder,
+}: CartProps) => {
   const cartLength = useMemo(
     () => cart.reduce((total, item) => total + item.quantity, 0),
     [cart],
@@ -86,7 +91,10 @@ export const Cart = ({ cart, deleteFromCart }: CartProps) => {
               ))}
             </div>
 
-            <Order orderTotal={orderTotal} />
+            <Order
+              orderTotal={orderTotal}
+              handleActiveOrder={handleActiveOrder}
+            />
           </div>
         </section>
       )}
