@@ -14,6 +14,7 @@ function App() {
     incrementQuantity,
     handleActiveOrder,
     activeOrder,
+    handleNewOrder,
   } = useCart();
 
   return (
@@ -35,7 +36,7 @@ function App() {
         />
         {activeOrder && (
           <>
-            <ConfirmOrder cart={cart} />
+            <ConfirmOrder cart={cart} handleNewOrder={handleNewOrder} />
             <Shadow />
           </>
         )}

@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../data/data.json";
 import type { Db, Dessert } from "../types";
 
+function initialState(): Dessert[] {
+  let localCart = localStorage.getItem("cart");
+  return localCart ? JSON.parse(localCart) : [];
+}
+
 export const useCart = () => {
   const [db] = useState<Db[]>(data);
-  const [cart, setCart] = useState<Dessert[]>([]);
+  const [cart, setCart] = useState<Dessert[]>(initialState);
   const [activeOrder, setActiveOrder] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function addToCart(dessert: Db) {
     const itemExist = cart.find((item) => item.name === dessert.name);
@@ -51,6 +60,11 @@ export const useCart = () => {
     setActiveOrder(true);
   }
 
+  function handleNewOrder() {
+    setActiveOrder(false);
+    setCart([]);
+  }
+
   return {
     db,
     cart,
@@ -60,5 +74,6 @@ export const useCart = () => {
     incrementQuantity,
     handleActiveOrder,
     activeOrder,
+    handleNewOrder,
   };
 };
