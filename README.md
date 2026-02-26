@@ -16,3 +16,18 @@ Throughout these projects, I primarily use:
 ## 📂 Completed Projects
 
 Here is a list of the challenges available in this repository. Each folder contains the source code for a specific project.
+
+| Challenge | Source Code |
+| :--- | :--- |
+| **Mortgage Repayment Calculator** | [View Code](./mortgage-repayment-calculator) |
+| **Product List with Cart** | [View Code](./product-list-with-cart) |
+| **QR Code Component** | [View Code](./qr-code-component) |
+| **Results Summary Component** | [View Code](./results-summary-component) |
+
+*(Note: You can view the live versions by clicking the GitHub Pages link in the "Deployments" section of this repository).*
+
+## 🤝 Feedback & Contributions
+
+Feedback is always welcome! If you have any suggestions on how I can improve my code, optimize accessibility, or refactor any logic, please feel free to open an Issue or leave a comment.
+
+Coded by Alan Chala 💻
