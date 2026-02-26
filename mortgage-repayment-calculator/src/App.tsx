@@ -1,10 +1,11 @@
 import { Form } from "./components/Form";
+import { Result } from "./components/Result";
 
 function App() {
   return (
-    <main className="grid md:grid-cols-2">
+    <main className="max-w-5xl grid md:grid-cols-2 overflow-hidden rounded-3xl">
       <Form />
-      <section className="bg-slate-600">1</section>
+      <Result />
     </main>
   );
 }
