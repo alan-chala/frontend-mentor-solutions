@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Figtree", sans-serif;
+
+  --color-yellow: #f4d04e;
+  --color-white: #fff;
+  --color-gray-500: #6b6b6b;
+  --color-gray-950: #121212;
+  
+  --transition: all ease .3s;
+}
+
+body {
+  background-color: var(--color-yellow);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 1.2rem;
+  border-radius: 1rem;
+  max-width: 350px;
+  border: 2px solid var(--color-gray-950);
+  box-shadow: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card span {
+  font-weight: 500;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.card-content button {
+  background-color: var(--color-yellow);
+  margin-bottom: .8rem;
+  display: block;
+  border: none;
+  padding:.5rem;
+  border-radius: 0.3rem;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+.card-content span {
+  font-size: .9rem;
+}
+
+.card-content h1 {
+  font-size: 1.4rem;
+  margin: .5rem 0;
+  transition: var(--transition);
+}
+
+.card-content h1:hover {
+  color: var(--color-yellow);
+  cursor: pointer;
+}
+
+.card-content p {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--color-gray-500);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  font-size: .8rem;
+  font-weight: 800;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
