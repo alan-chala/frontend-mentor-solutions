@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { State } from "../types";
+import type { State, TotalMortgage } from "../types";
 import { ErrorMessage } from "./ErrorMessage";
 
 const initialState: State = {
@@ -9,7 +9,12 @@ const initialState: State = {
   type: "",
 };
 
-export const Form = () => {
+type FormProps = {
+  calculateMortgage: (mortgage: State) => void;
+  setTotalMortgage: React.Dispatch<React.SetStateAction<TotalMortgage>>;
+};
+
+export const Form = ({ calculateMortgage, setTotalMortgage }: FormProps) => {
   const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState<State>({
     amount: "",
@@ -18,20 +23,16 @@ export const Form = () => {
     type: "",
   });
 
-  function handleChange(
+  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>,
-  ) {
-    const { id, value } = e.target;
+  ) => {
+    const { name, value } = e.target;
 
     setForm({
       ...form,
-      [id]: value,
+      [name]: value,
     });
-  }
-
-  function handleResetForm() {
-    setForm(initialState);
-  }
+  };
 
   const validate = () => {
     let newErrors: State = {
@@ -62,21 +63,34 @@ export const Form = () => {
 
     const validationErrors = validate();
 
-    if (Object.keys(validationErrors).length > 0) {
+    if (Object.values(validationErrors).some((error) => error !== "")) {
       setErrors(validationErrors);
       return;
     }
 
-    console.log("Formulario válido 🚀");
+    calculateMortgage(form);
+    setErrors(initialState);
   };
 
+  function resetForm() {
+    setForm(initialState);
+    setErrors(initialState);
+
+    const totalState: TotalMortgage = {
+      monthly: "",
+      total: "",
+    };
+
+    setTotalMortgage(totalState);
+  }
+
   return (
-    <form className="bg-white p-10 space-y-6" onSubmit={handleSubmit}>
+    <form className="p-10 space-y-6" onSubmit={handleSubmit}>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold">Mortgage Calculator</h1>
         <button
           className="py-2 px-4 rounded-md cursor-pointer text-white bg-slate-900 hover:bg-slate-950 transition duration-150 ease-in disabled:opacity-50"
-          onClick={handleResetForm}
+          onClick={resetForm}
           type="button"
           disabled={!form}
         >
@@ -99,7 +113,7 @@ export const Form = () => {
           <input
             className="p-3 w-full outline-none"
             onChange={handleChange}
-            type="text"
+            type="number"
             id="amount"
             name="amount"
             value={form.amount}
@@ -119,7 +133,7 @@ export const Form = () => {
             <input
               className="p-3 w-full outline-none"
               onChange={handleChange}
-              type="text"
+              type="number"
               id="years"
               name="years"
               value={form.years}
@@ -143,7 +157,7 @@ export const Form = () => {
             <input
               className="p-3 w-full outline-none"
               onChange={handleChange}
-              type="text"
+              type="number"
               id="interest"
               name="interest"
               value={form.interest}
@@ -168,8 +182,9 @@ export const Form = () => {
             onChange={handleChange}
             type="radio"
             id="type"
-            name="mortgage-type"
+            name="type"
             value="repayment"
+            checked={form.type === "repayment"}
           />
           <p className="text-xl font-bold text-slate-900">Repayment</p>
         </div>
@@ -180,8 +195,9 @@ export const Form = () => {
             onChange={handleChange}
             type="radio"
             id="type"
-            name="mortgage-type"
+            name="type"
             value="interest only"
+            checked={form.type === "interest only"}
           />
           <p className="text-xl font-bold text-slate-900">Interest Only</p>
         </div>

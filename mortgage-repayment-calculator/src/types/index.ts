@@ -4,3 +4,8 @@ export type State = {
   interest: string;
   type: string;
 };
+
+export type TotalMortgage = {
+  monthly: string;
+  total: string;
+};
