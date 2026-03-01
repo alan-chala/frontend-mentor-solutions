@@ -1,6 +1,8 @@
 import { useState } from "react";
+import type { State } from "../types";
+import { ErrorMessage } from "./ErrorMessage";
 
-const initialState = {
+const initialState: State = {
   amount: "",
   years: "",
   interest: "",
@@ -9,6 +11,12 @@ const initialState = {
 
 export const Form = () => {
   const [form, setForm] = useState(initialState);
+  const [errors, setErrors] = useState<State>({
+    amount: "",
+    years: "",
+    interest: "",
+    type: "",
+  });
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>,
@@ -25,8 +33,45 @@ export const Form = () => {
     setForm(initialState);
   }
 
+  const validate = () => {
+    let newErrors: State = {
+      amount: "",
+      years: "",
+      interest: "",
+      type: "",
+    };
+
+    if (!form.amount) {
+      newErrors = { ...newErrors, amount: "The amount is required" };
+    }
+    if (!form.years) {
+      newErrors = { ...newErrors, years: "Years is required" };
+    }
+    if (!form.interest) {
+      newErrors = { ...newErrors, interest: "The interest is required" };
+    }
+    if (!form.type) {
+      newErrors = { ...newErrors, type: "Pick up a type" };
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    console.log("Formulario válido 🚀");
+  };
+
   return (
-    <form className="bg-white p-10 space-y-6">
+    <form className="bg-white p-10 space-y-6" onSubmit={handleSubmit}>
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold">Mortgage Calculator</h1>
         <button
@@ -43,8 +88,12 @@ export const Form = () => {
         <label className="font-medium text-slate-700" htmlFor="amount">
           Mortgage Amount
         </label>
-        <div className="border-2 border-slate-700 mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between">
-          <span className="p-3 font-bold text-xl bg-slate-100 text-slate-600">
+        <div
+          className={`border-2 mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between mb-3 ${errors.amount ? "border-red" : "border-slate-700"}`}
+        >
+          <span
+            className={`p-3 font-bold text-xl ${errors.amount ? "bg-red text-white" : " bg-slate-100 text-slate-600"}`}
+          >
             €
           </span>
           <input
@@ -56,6 +105,7 @@ export const Form = () => {
             value={form.amount}
           />
         </div>
+        {errors.amount && <ErrorMessage />}
       </div>
 
       <div className="flex items-center gap-4">
@@ -63,7 +113,9 @@ export const Form = () => {
           <label className="font-medium text-slate-700" htmlFor="years">
             Mortgage Term
           </label>
-          <div className="border-2 border-slate-700 mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between">
+          <div
+            className={`border-2 mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between mb-3 ${errors.years ? "border-red" : "border-slate-700"}`}
+          >
             <input
               className="p-3 w-full outline-none"
               onChange={handleChange}
@@ -72,17 +124,22 @@ export const Form = () => {
               name="years"
               value={form.years}
             />
-            <span className="p-3 font-bold text-xl bg-slate-100 text-slate-600">
+            <span
+              className={`p-3 font-bold text-xl  text-slate-600 ${errors.years ? "bg-red text-white" : "bg-slate-100"}`}
+            >
               years
             </span>
           </div>
+          {errors.years && <ErrorMessage />}
         </div>
 
         <div>
           <label className="font-medium text-slate-700" htmlFor="interest">
             Interest Rate
           </label>
-          <div className="border-2 border-slate-700 mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between">
+          <div
+            className={`border-2  mt-3 rounded-md overflow-hidden border-solid flex items-center justify-between mb-3 ${errors.interest ? "border-red" : "border-slate-700"}`}
+          >
             <input
               className="p-3 w-full outline-none"
               onChange={handleChange}
@@ -91,10 +148,13 @@ export const Form = () => {
               name="interest"
               value={form.interest}
             />
-            <span className="p-3 font-bold text-xl bg-slate-100 text-slate-600">
+            <span
+              className={`p-3 font-bold text-xl  text-slate-600 ${errors.interest ? "bg-red text-white" : "bg-slate-100"}`}
+            >
               %
             </span>
           </div>
+          {errors.interest && <ErrorMessage />}
         </div>
       </div>
 
@@ -125,6 +185,7 @@ export const Form = () => {
           />
           <p className="text-xl font-bold text-slate-900">Interest Only</p>
         </div>
+        {errors.type && <ErrorMessage />}
       </div>
 
       <div>
