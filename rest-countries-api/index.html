@@ -13,8 +13,26 @@
       content="countries, api, rest, react, typescript, web development"
     />
     <title>Countries Api</title>
+    <script>
+      try {
+        const storageString = localStorage.getItem("theme-storage");
+
+        if (storageString) {
+          const storageData = JSON.parse(storageString);
+          if (storageData?.state?.theme === "dark") {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        }
+      } catch (error) {
+        console.error("Error al parsear el tema inicial", error);
+      }
+    </script>
   </head>
-  <body class="min-h-screen bg-grey-50 text-grey-950">
+  <body
+    class="min-h-screen bg-grey-50 text-grey-950 dark:bg-blue-950 dark:text-white"
+  >
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
