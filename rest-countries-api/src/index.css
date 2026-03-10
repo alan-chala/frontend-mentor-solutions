@@ -19,6 +19,13 @@
   --color-grey-50: hsl(0, 0%, 99%);
 }
 
+@layer {
+  .custom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
 /*
 
 color-blue-900 (Dark Mode Elements): hsl(209, 23%, 22%);
