@@ -1,10 +1,28 @@
 import { Search } from "lucide-react";
+import { useCountries } from "../store";
 
 export const Form = () => {
+  const { setSearchQuery, setRegion, searchQuery, region } = useCountries();
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
+
+  function handleRegionChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setRegion(e.currentTarget.value);
+  }
+
+  function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchQuery(e.currentTarget.value);
+  }
+
   return (
-    <form className="flex md:flex-row flex-col gap-6 md:items-center justify-between">
+    <form
+      className="flex md:flex-row flex-col gap-6 md:items-center justify-between"
+      onSubmit={handleSubmit}
+    >
       <div className="flex items-center justify-between bg-white dark:bg-blue-900 rounded-md shadow md:w-112.5 w-full">
-        <button className="p-6 cursor-pointer">
+        <button type="button" className="p-6 cursor-pointer">
           <Search size={18} />
         </button>
         <input
@@ -13,6 +31,8 @@ export const Form = () => {
           placeholder="Search for a country..."
           name="search"
           id="search"
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
       </div>
 
@@ -20,10 +40,12 @@ export const Form = () => {
         <select
           className="p-6 bg-white dark:bg-blue-900 rounded-md shadow w-40"
           name="region"
+          value={region}
+          onChange={handleRegionChange}
         >
           <option value="all">All</option>
           <option value="africa">Africa</option>
-          <option value="america">America</option>
+          <option value="americas">America</option>
           <option value="asia">Asia</option>
           <option value="europe">Europe</option>
           <option value="oceania">Oceania</option>
