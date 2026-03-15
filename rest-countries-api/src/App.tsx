@@ -6,12 +6,14 @@ import { Country } from "./pages/Country";
 
 // Components
 import { Nav } from "./components/Nav";
+import { Form } from "./components/Form";
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
-      <main className="md:px-20 md:py-10 py-6 px-4">
+      <main className="md:px-20 md:py-10 py-6 px-4 space-y-10">
+        <Form />
         <Routes>
           <Route path="/" element={<Countries />} />
           <Route path="/country/:alpha3Code" element={<Country />} />
