@@ -1,12 +1,23 @@
 import type { Country } from "../types";
+import { useNavigate } from "react-router-dom";
 
 type CardProps = {
   country: Country;
 };
 
 export const Card = ({ country }: CardProps) => {
+  const navigate = useNavigate();
+
+  function handleNavigation(alpha3Code: string) {
+    const currentRoute: string = `/country/:${alpha3Code}`;
+    navigate(currentRoute);
+  }
+
   return (
-    <article className="bg-white dark:bg-blue-900 shadow overflow-hidden rounded-md">
+    <article
+      className="bg-white dark:bg-blue-900 shadow overflow-hidden rounded-md"
+      onClick={() => handleNavigation(country.alpha3Code)}
+    >
       <div>
         <img
           src={country.flags.svg}
