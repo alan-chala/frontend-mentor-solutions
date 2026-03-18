@@ -36,7 +36,7 @@ export const CountryDetail = () => {
           <img
             src={currentCountry.flags.svg}
             alt={`${currentCountry.name} flag`}
-            className="w-full max-w shadow object-cover h-125"
+            className="w-full shadow object-cover md:h-125"
           />
         </div>
 
