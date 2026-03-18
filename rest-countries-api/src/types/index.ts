@@ -3,6 +3,19 @@ export type Flags = {
   png: string;
 };
 
+export type Currency = {
+  code: string;
+  name: string;
+  symbol: string;
+};
+
+export type Language = {
+  iso639_1: string;
+  iso639_2: string;
+  name: string;
+  nativeName: string;
+};
+
 export type Country = {
   name: string;
   topLevelDomain?: string[];
@@ -23,4 +36,6 @@ export type Country = {
   nativeName?: string;
   numericCode?: string;
   flags: Flags;
+  currencies?: Currency[];
+  languages?: Language[];
 };

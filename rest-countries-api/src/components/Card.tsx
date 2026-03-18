@@ -9,7 +9,7 @@ export const Card = ({ country }: CardProps) => {
   const navigate = useNavigate();
 
   function handleNavigation(alpha3Code: string) {
-    const currentRoute: string = `/country/:${alpha3Code}`;
+    const currentRoute: string = `/country/${alpha3Code}`;
     navigate(currentRoute);
   }
 
