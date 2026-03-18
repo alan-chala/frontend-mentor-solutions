@@ -30,8 +30,8 @@ const applyFilters = (countries: Country[], query: string, region: string) => {
 export const useCountries = create<State>()(
   persist(
     (set) => ({
-      countries: data,
-      filteredCountries: data,
+      countries: data as Country[],
+      filteredCountries: data as Country[],
       theme: "light",
       searchQuery: "",
       region: "all",
