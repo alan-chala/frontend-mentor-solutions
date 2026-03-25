@@ -23,6 +23,7 @@ Here is a list of the challenges available in this repository. Each folder conta
 | **Mortgage Repayment Calculator** | [View Code](./mortgage-repayment-calculator) |
 | **Product List with Cart** | [View Code](./product-list-with-cart) |
 | **QR Code Component** | [View Code](./qr-code-component) |
+| **Recipe Page** | [View Code](./recipe-page) |
 | **Rest Countries Api** | [View Code](./rest-countries-api) |
 | **Results Summary Component** | [View Code](./results-summary-component) |
 | **Social Links Profile** | [View Code](./social-links-profile) |
