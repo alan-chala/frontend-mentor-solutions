@@ -3,14 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A product preview card component that can be used in e-commerce websites. It features a responsive design, allowing it to adapt to different screen sizes." />
-    <meta name="keywords" content="product preview card, e-commerce, responsive design, HTML, CSS" />
+    <meta
+      name="description"
+      content="A product preview card component that can be used in e-commerce websites. It features a responsive design, allowing it to adapt to different screen sizes."
+    />
+    <meta
+      name="keywords"
+      content="product preview card, e-commerce, responsive design, HTML, CSS"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Frontend Mentor | Product preview card component</title>
   </head>
   <body>
@@ -19,25 +26,25 @@
         <div class="card-image">
           <picture>
             <source
-              media="(min-width: 1024px)"
-              srcset="./assets/images/image-product-desktop.jpg"
+              media="(max-width: 720px)"
+              srcset="./assets/images/image-product-mobile.jpg"
             />
             <img
-              src="./assets/images/image-product-mobile.jpg"
+              src="./assets/images/image-product-desktop.jpg"
               alt="perfume image"
             />
           </picture>
         </div>
 
         <div class="card-content">
-          <p>Perfume</p>
+          <p class="product-category">Perfume</p>
           <h1>Gabrielle Essence Eau De Parfum</h1>
           <p>
             A floral, solar and voluptuous interpretation composed by Olivier
             Polge, Perfumer-Creator for the House of CHANEL.
           </p>
           <div class="card-price">
-            <span class="price-new">$149.99</span>
+            <p class="price-new">$149.99</p>
             <span class="price-old">$169.99</span>
           </div>
           <div>
