@@ -1,0 +1,2 @@
+# Product preview card component
+
