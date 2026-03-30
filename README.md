@@ -29,6 +29,7 @@ Here is a list of the challenges available in this repository. Each folder conta
 | **Rest Countries Api** | [View Code](./rest-countries-api) |
 | **Results Summary Component** | [View Code](./results-summary-component) |
 | **Social Links Profile** | [View Code](./social-links-profile) |
+| **Testimonials Grid Section** | [View Code](./testimonials-grid-section) |
 
 *(Note: You can view the live versions by clicking the GitHub Pages link in the "Deployments" section of this repository).*
 
