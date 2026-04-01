@@ -27,6 +27,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.25rem;
 }
 
 h1 {
@@ -100,5 +101,15 @@ p {
 
   img {
     border-radius: 50%;
+  }
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 100%;
+  }
+
+  .card-content {
+    gap: 1.5rem;
   }
 }
