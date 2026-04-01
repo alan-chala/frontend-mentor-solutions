@@ -19,6 +19,7 @@ Here is a list of the challenges available in this repository. Each folder conta
 
 | Challenge | Source Code |
 | :--- | :--- |
+| **Article Preview Component** | [View Code](./article-preview-component) |
 | **Blog preview card** | [View Code](./blog-preview-card) |
 | **Four Card Feature Section** | [View Code](./four-card-feature-section) |
 | **Mortgage Repayment Calculator** | [View Code](./mortgage-repayment-calculator) |
