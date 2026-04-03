@@ -9,6 +9,7 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
@@ -16,16 +17,15 @@
   <body>
     <main>
       <section>
-        <div>
-          <div>
-            <h1>Stay updated!</h1>
-            <p>Join 60,000+ product managers receiving monthly updates on:</p>
-            <ul>
-              <li>Product discovery and building what matters</li>
-              <li>Measuring to ensure updates are a success</li>
-              <li>And much more!</li>
-            </ul>
-          </div>
+        <div class="text-wrapper">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+
           <form>
             <label for="email">
               Email address
@@ -40,14 +40,14 @@
           </form>
         </div>
 
-        <div>
+        <div class="image-wrapper">
           <picture>
             <source
               media="(max-width: 479px)"
               srcset="./assets/images/illustration-sign-up-mobile.svg"
             />
             <source
-              media="(max-width: 767px)"
+              media="(max-width: 780px)"
               srcset="./assets/images/illustration-sign-up-tablet.svg"
             />
             <img
