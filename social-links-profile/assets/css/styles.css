@@ -6,14 +6,14 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+  src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
+  font-display: swap;
 }
 
 :root {
   --color-grey-700: hsl(0, 0%, 20%);
   --color-grey-800: hsl(0, 0%, 12%);
   --color-grey-900: hsl(0, 0%, 8%);
-
   --color-green: hsl(75, 94%, 57%);
   --color-white: hsl(0, 0%, 100%);
 }
@@ -22,14 +22,15 @@ body {
   background-color: var(--color-grey-900);
   color: var(--color-white);
   font-family: "Inter", sans-serif;
+  line-height: 1.5;
 }
 
-body,
-main {
+.page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 1.5rem;
 }
 
 .card {
@@ -37,13 +38,18 @@ main {
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 1.75rem;
   text-align: center;
-  width: 400px;
+  width: min(400px, 100%);
   border-radius: 1rem;
 }
 
-img {
+.card__avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.card__avatar img {
   border-radius: 50%;
 }
 
@@ -51,46 +57,55 @@ p {
   font-size: 14px;
 }
 
-.card-text {
-  h1 {
-    font-size: 24px;
-    margin-bottom: 0.3rem;
-    font-weight: 700;
-  }
-
-  p {
-    color: var(--color-green);
-    font-weight: 600;
-  }
+.card__name {
+  font-size: 24px;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
 }
 
-ul {
+.card__location {
+  color: var(--color-green);
+  font-weight: 600;
+}
+
+.card__bio {
+  color: var(--color-white);
+}
+
+.social-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   list-style: none;
+  padding: 0;
+}
 
-  li {
-    background-color: var(--color-grey-700);
-    width: 100%;
-    overflow: hidden;
-    border-radius: 0.5rem;
-  }
+.social-list__item {
+  background-color: var(--color-grey-700);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
 
-  li a {
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 700;
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    font-size: 14px;
-    transition: all ease 0.3s;
-  }
+.social-list__link {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  li a:hover {
-    background-color: var(--color-green);
-    color: var(--color-grey-700);
-  }
+.social-list__link:hover,
+.social-list__link:focus-visible {
+  background-color: var(--color-green);
+  color: var(--color-grey-700);
+  outline: none;
+}
+
+.social-list__link:focus-visible {
+  box-shadow: 0 0 0 3px rgba(197, 248, 42, 0.4);
 }
