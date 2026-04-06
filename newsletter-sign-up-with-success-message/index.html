@@ -26,16 +26,14 @@
             <li>And much more!</li>
           </ul>
 
-          <form>
-            <label for="email">
-              Email address
+          <form novalidate>
+            <label for="email">Email address <span class="error-message">Valid email required</span></label>
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="email@company.com"
               />
-            </label>
             <button type="submit">Subscribe to monthly newsletter</button>
           </form>
         </div>
@@ -70,5 +68,7 @@
 
     Dismiss message
    
-  --></body>
+  -->
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
