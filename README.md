@@ -23,6 +23,7 @@ Here is a list of the challenges available in this repository. Each folder conta
 | **Blog preview card** | [View Code](./blog-preview-card) |
 | **Four Card Feature Section** | [View Code](./four-card-feature-section) |
 | **Mortgage Repayment Calculator** | [View Code](./mortgage-repayment-calculator) |
+| **Newsletter Sign Up with Success Message** | [View Code](./newsletter-sign-up-with-success-message) |
 | **Product List with Cart** | [View Code](./product-list-with-cart) |
 | **Product Preview Card** | [View Code](./product-preview-card) |
 | **QR Code Component** | [View Code](./qr-code-component) |
