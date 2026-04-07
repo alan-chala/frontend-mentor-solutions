@@ -1,140 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | Time tracking dashboard</title>
-</head>
-<body>
-  <main>
-    <section>
-      <div class="profile">
-        <div>
-          <img src="./assets/images/image-jeremy.png" alt="Jeremy Robson" width="80" height="80" />
-          <p>Report for</p>
-          <h1>Jeremy Robson</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A time tracking dashboard that allows users to view their daily, weekly, and monthly time spent on various activities. The dashboard features a clean and modern design, with interactive elements for easy navigation."
+    />
+    <meta
+      name="keywords"
+      content="time tracking, dashboard, frontend mentor, daily, weekly, monthly, activities, interactive, design"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="profile">
+          <div>
+            <img
+              src="./assets/images/image-jeremy.png"
+              alt="Jeremy Robson"
+              width="80"
+              height="80"
+            />
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+
+          <div class="timeframes">
+            <ul>
+              <li><a href="#">Daily</a></li>
+              <li><a href="#">Weekly</a></li>
+              <li><a href="#">Monthly</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="time-filters">
-          <ul>
-            <li><a href="#">Daily</a></li>
-            <li><a href="#">Weekly</a></li>
-            <li><a href="#">Monthly</a></li>
-          </ul>
+        <div class="card-wrapper">
+          <article class="card">
+            <div class="card-banner">
+              <img src="./assets/images/icon-work.svg" alt="Work icon" />
+            </div>
+
+            <div>
+              <div>
+                <p>Work</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">32hrs</h2>
+                <p>Last Week - <span class="previous">36hrs</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-banner">
+              <img src="./assets/images/icon-play.svg" alt="Play icon" />
+            </div>
+
+            <div>
+              <div>
+                <p>Play</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">10hrs</h2>
+                <p>Last Week - <span class="previous">8hrs</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-banner">
+              <img src="./assets/images/icon-study.svg" alt="Study icon" />
+            </div>
+
+            <div>
+              <div>
+                <p>Study</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">4hrs</h2>
+                <p>Last Week - <span class="previous">7hrs</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-banner">
+              <img
+                src="./assets/images/icon-exercise.svg"
+                alt="Exercise icon"
+              />
+            </div>
+
+            <div>
+              <div>
+                <p>Exercise</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">4hrs</h2>
+                <p>Last Week - <span class="previous">5hrs</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-banner">
+              <img src="./assets/images/icon-social.svg" alt="Social icon" />
+            </div>
+
+            <div>
+              <div>
+                <p>Social</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">5hrs</h2>
+                <p>Last Week - <span class="previous">10hrs</span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-banner">
+              <img
+                src="./assets/images/icon-self-care.svg"
+                alt="Self care icon"
+              />
+            </div>
+
+            <div>
+              <div>
+                <p>Self Care</p>
+                <img
+                  src="./assets/images/icon-ellipsis.svg"
+                  alt="Icon ellipsis"
+                />
+              </div>
+
+              <div>
+                <h2 class="current">2hrs</h2>
+                <p>Last Week - <span class="previous">2hrs</span></p>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>  
+      </section>
+    </main>
 
-      <div class="card-wrapper">
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-work.svg" alt="Work icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Work</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">32hrs</h2>
-              <p>Last Week - <span class="previous">36hrs</span></p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-play.svg" alt="Play icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Play</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">10hrs</h2>
-              <p>Last Week - <span class="previous">8hrs</span></p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-study.svg" alt="Study icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Study</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">4hrs</h2>
-              <p>Last Week - <span class="previous">7hrs</span></p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-exercise.svg" alt="Exercise icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Exercise</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">4hrs</h2>
-              <p>Last Week - <span class="previous">5hrs</span></p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-social.svg" alt="Social icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Social</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">5hrs</h2>
-              <p>Last Week - <span class="previous">10hrs</span></p>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-banner">
-            <img src="./assets/images/icon-self-care.svg" alt="Self care icon" />
-          </div>
-
-          <div>
-            <div>
-              <p>Self Care</p>
-              <img src="./assets/images/icon-ellipsis.svg" alt="Icon ellipsis" />
-            </div>
-
-            <div>
-              <h2 class="current">2hrs</h2>
-              <p>Last Week - <span class="previous">2hrs</span></p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-</body>
+    <script src="./assets/js/index.js"></script>
+  </body>
 </html>
