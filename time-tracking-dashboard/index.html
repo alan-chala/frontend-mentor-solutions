@@ -16,13 +16,14 @@
       href="./assets/images/favicon-32x32.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
   <body>
     <main>
-      <section>
+      <section class="dashboard">
         <div class="profile">
-          <div>
+          <div class="report-profile">
             <img
               src="./assets/images/image-jeremy.png"
               alt="Jeremy Robson"
@@ -36,7 +37,7 @@
           <div class="timeframes">
             <ul>
               <li><a href="#">Daily</a></li>
-              <li><a href="#">Weekly</a></li>
+              <li><a href="#" class="active">Weekly</a></li>
               <li><a href="#">Monthly</a></li>
             </ul>
           </div>
@@ -44,11 +45,11 @@
 
         <div class="card-wrapper">
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-1">
               <img src="./assets/images/icon-work.svg" alt="Work icon" />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Work</p>
                 <img
@@ -65,11 +66,11 @@
           </article>
 
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-2">
               <img src="./assets/images/icon-play.svg" alt="Play icon" />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Play</p>
                 <img
@@ -86,11 +87,11 @@
           </article>
 
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-3">
               <img src="./assets/images/icon-study.svg" alt="Study icon" />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Study</p>
                 <img
@@ -107,14 +108,14 @@
           </article>
 
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-4">
               <img
                 src="./assets/images/icon-exercise.svg"
                 alt="Exercise icon"
               />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Exercise</p>
                 <img
@@ -131,11 +132,11 @@
           </article>
 
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-5">
               <img src="./assets/images/icon-social.svg" alt="Social icon" />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Social</p>
                 <img
@@ -152,14 +153,14 @@
           </article>
 
           <article class="card">
-            <div class="card-banner">
+            <div class="card-banner banner-6">
               <img
                 src="./assets/images/icon-self-care.svg"
                 alt="Self care icon"
               />
             </div>
 
-            <div>
+            <div class="card-content">
               <div>
                 <p>Self Care</p>
                 <img
