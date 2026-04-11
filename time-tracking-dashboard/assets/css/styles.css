@@ -131,7 +131,7 @@ main {
 }
 
 .card-banner {
-  height: 4.75rem;
+  height: 4rem;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -141,7 +141,7 @@ main {
 }
 
 .banner-1 {
-  background-color: var(--color-yellow-300);
+  background-color: var(--color-orange-300);
 }
 
 .banner-2 {
@@ -153,7 +153,7 @@ main {
 }
 
 .banner-4 {
-  background-color: var(--color-orange-300);
+  background-color: var(--color-green-400);
 }
 
 .banner-5 {
