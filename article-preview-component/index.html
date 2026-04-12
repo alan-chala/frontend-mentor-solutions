@@ -52,32 +52,52 @@
             </div>
 
             <div class="popup-wrapper">
-              <div class="popup">
-                <p>Share</p>
-                <img
-                  src="./assets/images/icon-facebook.svg"
-                  alt="Facebook icon"
-                  width="24"
-                  height="24"
-                />
-                <img
-                  src="./assets/images/icon-twitter.svg"
-                  alt="Twitter icon"
-                  width="24"
-                  height="24"
-                />
-                <img
-                  src="./assets/images/icon-pinterest.svg"
-                  alt="Pinterest icon"
-                  width="24"
-                  height="24"
-                />
+              <div
+                class="popup"
+                id="share-popup"
+                aria-label="Share this article"
+                hidden
+              >
+                <p id="share-popup-label">Share</p>
+
+                <a href="#" aria-label="Share on Facebook">
+                  <img
+                    src="./assets/images/icon-facebook.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                  />
+                </a>
+
+                <a href="#" aria-label="Share on Twitter">
+                  <img
+                    src="./assets/images/icon-twitter.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                  />
+                </a>
+
+                <a href="#" aria-label="Share on Pinterest">
+                  <img
+                    src="./assets/images/icon-pinterest.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                  />
+                </a>
               </div>
 
-              <button class="show-popup">
+              <button
+                class="show-popup"
+                type="button"
+                aria-label="Open share options"
+                aria-expanded="false"
+                aria-controls="share-popup"
+              >
                 <img
                   src="./assets/images/icon-share.svg"
-                  alt="Share icon"
+                  alt=""
                   width="18"
                   height="18"
                 />
