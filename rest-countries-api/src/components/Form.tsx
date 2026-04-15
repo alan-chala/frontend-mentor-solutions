@@ -20,11 +20,16 @@ export const Form = () => {
     <form
       className="flex md:flex-row flex-col gap-6 md:items-center justify-between"
       onSubmit={handleSubmit}
+      role="search"
+      aria-label="Search countries"
     >
       <div className="flex items-center justify-between bg-white dark:bg-blue-900 rounded-md shadow md:w-112.5 w-full">
-        <button type="button" className="p-6 cursor-pointer">
-          <Search size={18} />
-        </button>
+        <label className="sr-only" htmlFor="search">
+          Search for a country
+        </label>
+        <span className="p-6" aria-hidden="true">
+          <Search size={18} aria-hidden="true" />
+        </span>
         <input
           type="search"
           className="py-6 outline-none border-none w-full dark:placeholder:text-white"
@@ -37,9 +42,13 @@ export const Form = () => {
       </div>
 
       <div>
+        <label className="sr-only" htmlFor="region">
+          Filter by region
+        </label>
         <select
           className="p-6 bg-white dark:bg-blue-900 rounded-md shadow w-40"
           name="region"
+          id="region"
           value={region}
           onChange={handleRegionChange}
         >
