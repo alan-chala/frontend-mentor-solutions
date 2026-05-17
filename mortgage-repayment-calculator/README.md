@@ -1,5 +1,5 @@
 # Mortgage Repayment Calculator
 
-# Preview
+## Preview
 
 ![alt text](public/preview.png)
