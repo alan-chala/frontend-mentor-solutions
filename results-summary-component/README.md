@@ -1,5 +1,5 @@
 # Results Summary Component
 
-# Preview
+## Preview
 
 ![alt text](public/preview.png)
