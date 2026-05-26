@@ -31,15 +31,15 @@ header {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+}
 
-  h1 {
-    font-weight: var(--weight-200);
-    margin-bottom: 1rem;
-  }
+header  h1 {
+  font-weight: var(--weight-200);
+  margin-bottom: 1rem;
+}
 
-  span {
+header span {
     font-weight: var(--weight-600);
-  }
 }
 
 main {
